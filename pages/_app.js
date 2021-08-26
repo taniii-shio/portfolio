@@ -7,6 +7,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/components/Theme";
 
 import NavBar from "../src/components/layouts/NavBar";
+import Footer from "../src/components/layouts/Footer";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -35,6 +36,7 @@ export default function MyApp(props) {
         <Container maxWidth="lg">
           <Component {...pageProps} />
         </Container>
+        <Footer />
       </ThemeProvider>
     </React.Fragment>
   );

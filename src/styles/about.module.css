@@ -1,0 +1,19 @@
+.container {
+  margin-top: 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.borderCircle {
+  border-radius: 9999px;
+}

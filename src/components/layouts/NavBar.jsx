@@ -30,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
-  navbar: {
-    backgroundColor: "#ccc",
-  },
   appBarMenuItem: {
     marginLeft: theme.spacing(8),
     [theme.breakpoints.down("xs")]: {
@@ -45,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "20px",
     "&:hover, &.selected": {
-      color: "#fff",
+      color: "#ccc",
     },
   },
   drawer: {
@@ -133,7 +130,7 @@ function NavBar(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.navbar}>
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             color="inherit"

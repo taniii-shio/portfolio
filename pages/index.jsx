@@ -12,7 +12,13 @@ export default function Home() {
       <main>
         <div className={styles.container}>
           <h1 className={styles.title}>NAOTO SHIOYA</h1>
-          <p>WELCOME TO MY PORTFOLIO</p>
+          <p>WELCOME TO MY PORTFOLIO SITE</p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </main>
     </>

@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import styles from "../src/styles/about.module.css";
 
@@ -38,40 +39,45 @@ const profiles = [
 export default function About() {
   const classes = useStyles();
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>About Me</h1>
+    <>
+      <Head>
+        <title>NaotoShioya/About</title>
+      </Head>
+      <div className={styles.container}>
+        <h1 className={styles.title}>About Me</h1>
 
-      <div className={styles.imageContainer}>
-        <Image
-          priority
-          src="/images/about.jpg"
-          className={styles.borderCircle}
-          height={200}
-          width={200}
-        />
+        <div className={styles.imageContainer}>
+          <Image
+            priority
+            src="/images/about.jpg"
+            className={styles.borderCircle}
+            height={200}
+            width={200}
+          />
+        </div>
+
+        <TableContainer>
+          <Table className={classes.table} aria-label="simple table">
+            <TableBody>
+              {profiles.map((profile) => (
+                <TableRow key={profile.name}>
+                  <TableCell
+                    component="th"
+                    scope="profile"
+                    align="center"
+                    className={classes.profile}
+                  >
+                    {profile.name}
+                  </TableCell>
+                  <TableCell align="center" className={classes.data}>
+                    {profile.data}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
-
-      <TableContainer>
-        <Table className={classes.table} aria-label="simple table">
-          <TableBody>
-            {profiles.map((profile) => (
-              <TableRow key={profile.name}>
-                <TableCell
-                  component="th"
-                  scope="profile"
-                  align="center"
-                  className={classes.profile}
-                >
-                  {profile.name}
-                </TableCell>
-                <TableCell align="center" className={classes.data}>
-                  {profile.data}
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </div>
+    </>
   );
 }

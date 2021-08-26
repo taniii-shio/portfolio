@@ -30,15 +30,23 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+  navbar: {
+    backgroundColor: "#ccc",
+  },
   appBarMenuItem: {
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(8),
     [theme.breakpoints.down("xs")]: {
       display: "none",
     },
   },
   appBarMenuItemLink: {
-    color: "white",
+    color: "black",
     cursor: "pointer",
+    fontWeight: "bold",
+    fontSize: "20px",
+    "&:hover, &.selected": {
+      color: "#fff",
+    },
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -125,7 +133,7 @@ function NavBar(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed">
+      <AppBar position="fixed" className={classes.navbar}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -136,9 +144,6 @@ function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            Hello.
-          </Typography>
           {MENU_LIST.map(({ title, href }) => {
             return (
               <Typography noWrap className={classes.appBarMenuItem} key={title}>

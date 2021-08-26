@@ -1,4 +1,5 @@
 import Head from "next/head";
+import styles from "../src/styles/home.module.css";
 
 export default function Home() {
   return (
@@ -9,8 +10,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>NAOTO SHIOYA</h1>
-        <p>WELCOME TO MY PORTFOLIO</p>
+        <div className={styles.container}>
+          <h1 className={styles.title}>NAOTO SHIOYA</h1>
+          <p>WELCOME TO MY PORTFOLIO</p>
+        </div>
       </main>
     </>
   );

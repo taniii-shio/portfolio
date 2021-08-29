@@ -12,6 +12,9 @@ export default class Contact extends React.Component {
       name: "",
       email: "",
       description: "",
+      hasNameError: false,
+      hasEmailError: false,
+      hasContentError: false,
     };
 
     this.inputName = this.inputName.bind(this);
@@ -20,19 +23,44 @@ export default class Contact extends React.Component {
   }
 
   inputName = (event) => {
-    console.log(event.target.value);
-    this.setState({ name: event.target.value });
+    const isEmpty = event.target.value === "";
+    this.setState({ name: event.target.value, hasNameError: isEmpty });
   };
 
   inputEmail = (event) => {
-    this.setState({ email: event.target.value });
+    const isEmpty = event.target.value === "";
+    this.setState({ email: event.target.value, hasEmailError: isEmpty });
   };
 
   inputDescription = (event) => {
-    this.setState({ description: event.target.value });
+    const isEmpty = event.target.value === "";
+    this.setState({
+      description: event.target.value,
+      hasContentError: isEmpty,
+    });
   };
 
   render() {
+    let nameErrorText;
+    if (this.state.hasNameError) {
+      nameErrorText = (
+        <p className={styles.errormsg}>Please enter your name.</p>
+      );
+    }
+
+    let emailErrorText;
+    if (this.state.hasEmailError) {
+      emailErrorText = (
+        <p className={styles.errormsg}>Please enter your email.</p>
+      );
+    }
+
+    let contentErrorText;
+    if (this.state.hasContentError) {
+      contentErrorText = (
+        <p className={styles.errormsg}>Please enter content.</p>
+      );
+    }
     return (
       <div className={styles.container}>
         <Head>
@@ -48,6 +76,7 @@ export default class Contact extends React.Component {
             type={"text"}
             onChange={this.inputName}
           />
+          {nameErrorText}
           <br />
           <br />
           <TextInput
@@ -58,6 +87,7 @@ export default class Contact extends React.Component {
             type={"email"}
             onChange={this.inputEmail}
           />
+          {emailErrorText}
           <br />
           <br />
           <TextInput
@@ -68,13 +98,16 @@ export default class Contact extends React.Component {
             type={"text"}
             onChange={this.inputDescription}
           />
+          {contentErrorText}
           <br />
           <br />
           <div className={styles.btncont}>
             <Button
               onClick={this.submitForm}
               variant="contained"
-              disabled="true"
+              disabled={
+                !this.state.name || !this.state.email || !this.state.description
+              }
             >
               submit
             </Button>

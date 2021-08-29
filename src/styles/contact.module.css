@@ -1,0 +1,17 @@
+.container {
+  margin-top: 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.formcont {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.btncont {
+  text-align: center;
+}

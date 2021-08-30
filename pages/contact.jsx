@@ -15,6 +15,7 @@ export default class Contact extends React.Component {
       hasNameError: false,
       hasEmailError: false,
       hasContentError: false,
+      isSubmitted: false,
     };
 
     this.inputName = this.inputName.bind(this);
@@ -40,6 +41,12 @@ export default class Contact extends React.Component {
     });
   };
 
+  handleSubmit = () => {
+    this.setState({
+      isSubmitted: true,
+    });
+  };
+
   render() {
     let nameErrorText;
     if (this.state.hasNameError) {
@@ -61,12 +68,17 @@ export default class Contact extends React.Component {
         <p className={styles.errormsg}>Please enter content.</p>
       );
     }
-    return (
-      <div className={styles.container}>
-        <Head>
-          <title>NaotoShioya/Contact</title>
-        </Head>
-        <h1 className={styles.title}>contact</h1>
+
+    let contactForm;
+    if (this.state.isSubmitted) {
+      contactForm = (
+        <div className={styles.msgcont}>
+          <h2>Your message has been sent.</h2>
+          <h3>Please wait...</h3>
+        </div>
+      );
+    } else {
+      contactForm = (
         <div className={styles.formcont}>
           <TextInput
             label={"Name (Required)"}
@@ -103,7 +115,9 @@ export default class Contact extends React.Component {
           <br />
           <div className={styles.btncont}>
             <Button
-              onClick={this.submitForm}
+              onClick={() => {
+                this.handleSubmit();
+              }}
               variant="contained"
               disabled={
                 !this.state.name || !this.state.email || !this.state.description
@@ -117,6 +131,16 @@ export default class Contact extends React.Component {
           <br />
           <br />
         </div>
+      );
+    }
+
+    return (
+      <div className={styles.container}>
+        <Head>
+          <title>NaotoShioya/Contact</title>
+        </Head>
+        <h1 className={styles.title}>contact</h1>
+        {contactForm}
       </div>
     );
   }

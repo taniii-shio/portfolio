@@ -42,8 +42,36 @@ export default class Contact extends React.Component {
   };
 
   handleSubmit = () => {
-    this.setState({
-      isSubmitted: true,
+    const name = this.state.name;
+    const email = this.state.email;
+    const description = this.state.description;
+
+    const payload = {
+      text:
+        "お問い合わせがありました\n" +
+        "お名前:" +
+        name +
+        "\n" +
+        "Email:" +
+        email +
+        "\n" +
+        "問い合わせ内容:\n" +
+        description,
+    };
+
+    const url =
+      "https://hooks.slack.com/services/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";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(payload),
+    }).then(() => {
+      this.setState({
+        name: "",
+        email: "",
+        description: "",
+        isSubmitted: true,
+      });
     });
   };
 
@@ -74,7 +102,7 @@ export default class Contact extends React.Component {
       contactForm = (
         <div className={styles.msgcont}>
           <h2>Your message has been sent.</h2>
-          <h3>Please wait...</h3>
+          <h3>Please wait for contact.</h3>
         </div>
       );
     } else {

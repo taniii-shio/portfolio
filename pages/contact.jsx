@@ -60,7 +60,7 @@ export default class Contact extends React.Component {
     };
 
     const url =
-      "https://hooks.slack.com/services/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";
+      "https://hooks.slack.com/services/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";
 
     fetch(url, {
       method: "POST",

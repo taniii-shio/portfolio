@@ -41,19 +41,28 @@ export default function Portfolio() {
                 image={"../../images/middizzzy.jpg"}
                 title={"MidDizzzy"}
                 body={"https://middizzzy.tokyo"}
-                // href={"https://middizzzy.tokyo"}
+                href={"https://middizzzy.tokyo"}
               />
             </Grid>
           </Grid>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6} md={6} lg={6}>
               <div className={styles.excont}>
-                <h2>test</h2>
-                <p>test</p>
+                <h2>Create PortfolioSite</h2>
+                <p>
+                  It was created for the purpose of archiving all the works in
+                  one place.
+                </p>
+                <p>Tools: Next.js Material-Ui</p>
               </div>
             </Grid>
             <Grid item xs={12} sm={6} md={6} lg={6}>
-              <PortfolioItem image={""} title={"test"} body={"test"} />
+              <PortfolioItem
+                image={"../../images/portfolio.jpg"}
+                title={"PortfolioSite"}
+                body={"https://taniiishio.com"}
+                href={"https://taniiishio.com"}
+              />
             </Grid>
           </Grid>
         </div>

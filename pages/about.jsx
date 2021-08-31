@@ -11,10 +11,15 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 
+import IconButton from "@material-ui/core/IconButton";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import TwitterIcon from "@material-ui/icons/Twitter";
+
 const useStyles = makeStyles({
   table: {
     width: 600,
     margin: "0 auto",
+    marginBottom: "30px",
   },
   profile: {
     fontSize: "20px",
@@ -77,6 +82,12 @@ export default function About() {
             </TableBody>
           </Table>
         </TableContainer>
+        <IconButton href="https://github.com/taniii-shio" target="_blank">
+          <GitHubIcon />
+        </IconButton>
+        <IconButton href="https://twitter.com/taniii_shio" target="_blank">
+          <TwitterIcon />
+        </IconButton>
       </div>
     </>
   );

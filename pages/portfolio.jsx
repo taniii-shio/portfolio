@@ -60,8 +60,8 @@ export default function Portfolio() {
               <PortfolioItem
                 image={"../../images/portfolio.jpg"}
                 title={"PortfolioSite"}
-                body={"https://taniiishio.com"}
-                href={"https://taniiishio.com"}
+                body={"https://www.taniii-shio.com"}
+                href={"https://www.taniii-shio.com"}
               />
             </Grid>
           </Grid>

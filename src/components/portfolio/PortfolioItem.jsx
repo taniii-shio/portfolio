@@ -28,7 +28,7 @@ const PortfolioItem = (props) => {
         <Typography gutterBottom variant="h5" component="h2">
           {props.title}
         </Typography>
-        <a href={props.href} className={classes.link}>
+        <a href={props.href} className={classes.link} target="_blank">
           <Typography variant="body2" component="p">
             {props.body}
           </Typography>

@@ -12,12 +12,12 @@ export default function Home() {
       <main>
         <div className={styles.container}>
           <Hidden xsDown>
-            <h1 className={styles.title}>NAOTO SHIOYA</h1>
+            <h1 className={styles.title}>Naoto Shioya</h1>
           </Hidden>
           <Hidden smUp>
-            <h1 className={styles.mobileTit}>NAOTO SHIOYA</h1>
+            <h1 className={styles.mobileTit}>Naoto Shioya</h1>
           </Hidden>
-          <h3>WELCOME TO MY PORTFOLIO SITE</h3>
+          <h3>Welcome to my PortfolioSite</h3>
         </div>
       </main>
     </>

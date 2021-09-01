@@ -1,8 +1,14 @@
 .container {
   text-align: center;
+  height: 350px;
 }
 
 .title {
-  margin-top: 150px;
-  font-size: 5rem;
+  margin-top: 200px;
+  font-size: 4.8rem;
+}
+
+.mobileTit {
+  margin-top: 200px;
+  font-size: 3rem;
 }

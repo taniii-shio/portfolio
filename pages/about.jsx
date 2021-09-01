@@ -95,13 +95,24 @@ export default function About() {
         <h1 className={styles.title}>About Me</h1>
 
         <div className={styles.imageContainer}>
-          <Image
-            priority
-            src="/images/about.jpg"
-            className={styles.borderCircle}
-            height={200}
-            width={200}
-          />
+          <Hidden smDown>
+            <Image
+              priority
+              src="/images/about.jpg"
+              className={styles.borderCircle}
+              height={200}
+              width={200}
+            />
+          </Hidden>
+          <Hidden mdUp>
+            <Image
+              priority
+              src="/images/about.jpg"
+              className={styles.borderCircle}
+              height={150}
+              width={150}
+            />
+          </Hidden>
         </div>
 
         <Hidden smDown>

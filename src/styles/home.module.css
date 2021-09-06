@@ -1,5 +1,4 @@
 .container {
-  text-align: center;
   height: 350px;
 }
 
@@ -10,7 +9,7 @@
 }
 
 .mobileTit {
-  margin-top: 200px;
+  margin-top: 300px;
   font-size: 2rem;
   font-family: "Montserrat", sans-serif;
 }

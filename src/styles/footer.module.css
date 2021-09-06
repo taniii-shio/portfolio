@@ -1,6 +1,9 @@
 .container {
   background-color: #eee;
+  width: 100%;
   margin-top: 30px;
   padding: 3px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
 }

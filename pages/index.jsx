@@ -20,7 +20,7 @@ export default function Home() {
           <Hidden smUp>
             <h1 className={styles.mobileTit}>NAOTO SHIOYA</h1>
           </Hidden>
-          <h3>Welcome to my PortfolioSite</h3>
+          <h3 className={styles.msg}>Welcome to my PortfolioSite</h3>
         </div>
       </main>
     </>
